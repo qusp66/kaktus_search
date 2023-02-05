@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kaktus-search
+  namespace: kaktus
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: kaktus.hbvu.local
+      http:
+        paths:
+          - path: /           
+            pathType: Prefix
+            backend:
+              service:
+                name: kaktus-search
+                port:
+                  number: 80

@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    .panel.panel-default
+        .panel-heading Kaktus Search Engine
+        .panel-body
+            form(action='/submit', method='post')
+              fieldset
+                .form-group.row
+                  .col-sm-10   
+                    input.form-control(type='text', name='search') 
+                  .col-sm-2
+                    button.btn.btn-primary(type='submit') Search 

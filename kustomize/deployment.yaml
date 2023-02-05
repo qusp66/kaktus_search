@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: kaktus
+  name: kaktus-search
+  labels:
+    app: kaktus-search
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kaktus-search
+  template:
+    metadata:
+      labels:
+        app: kaktus-search
+    spec:    
+      containers:
+      - name: kaktus-search
+        image: qusp66/kaktus_search:0.0.1
+        ports:
+          - containerPort: 3333
+            name: "kaktus-search"
